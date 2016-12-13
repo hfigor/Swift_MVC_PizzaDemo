@@ -5,6 +5,9 @@
 //  Created by Frank Cipolla on 12/12/16.
 //  Copyright © 2016 Frank Cipolla. All rights reserved.
 //
+// from SwiftSwiftVC by Steven Lipton
+// Source Available: “http://makeapppie.com/swift-swift-ui-view-controllers”
+
 
 import UIKit
 
