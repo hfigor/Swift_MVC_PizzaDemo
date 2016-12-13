@@ -62,7 +62,15 @@ class ViewController: UIViewController {
         resultsDisplayLabel.text = displayString
     }
     
+    // Mark : Navigation
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "type price" {
+            let vc = segue.destination as! PriceVC
+            vc.pizza = self.pizza
+        }
+        
+    }
     
     
     override func didReceiveMemoryWarning() {

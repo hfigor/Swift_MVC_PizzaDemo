@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sJX-PY-Z7o">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZB-fs-j2b">
-                                <rect key="frame" x="166" y="28" width="42" height="21"/>
+                                <rect key="frame" x="166" y="72" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="BC4-vN-yuu"/>
                                 </constraints>
@@ -240,11 +240,121 @@
                             <constraint firstItem="MX3-QC-tLo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="zIv-mu-xLV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="h6S-OJ-Av5">
+                        <barButtonItem key="rightBarButtonItem" title="Price" id="Yp3-gQ-eeF">
+                            <connections>
+                                <segue destination="Pf0-HZ-8wW" kind="show" identifier="type price" id="Ol2-kD-AtC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="resultsDisplayLabel" destination="RZB-fs-j2b" id="Eam-dZ-dCT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="138.98050974512745"/>
+        </scene>
+        <!--Pizza Type Price-->
+        <scene sceneID="Fku-ke-jK8">
+            <objects>
+                <viewController title="Pizza Type Price" id="Pf0-HZ-8wW" customClass="PriceVC" customModule="Swift_MVC_PizzaDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v1e-lf-Hxm"/>
+                        <viewControllerLayoutGuide type="bottom" id="F8U-89-IHe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RPg-8B-6CJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza Size and Toppings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqB-B2-93l">
+                                <rect key="frame" x="16" y="137" width="186" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HeA-cK-vft"/>
+                                    <constraint firstAttribute="width" constant="186" id="uNG-HM-gkT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Area X Unit Price = Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSc-JV-fZR">
+                                <rect key="frame" x="16" y="188" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="IT3-rE-hly"/>
+                                    <constraint firstAttribute="height" constant="21" id="LNg-7I-sWE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2Y-OR-XEq">
+                                <rect key="frame" x="16" y="244" width="75" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ZG9-XF-NGR"/>
+                                    <constraint firstAttribute="width" constant="75" id="zxl-Vl-CuH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Unit Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vP3-Xg-G8X">
+                                <rect key="frame" x="108" y="239" width="111" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5hl-3M-blf"/>
+                                    <constraint firstAttribute="width" constant="111" id="lIX-P1-FQ1"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="unitPriceText:" destination="Pf0-HZ-8wW" eventType="editingChanged" id="leV-CY-PqH"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yqB-B2-93l" firstAttribute="top" secondItem="v1e-lf-Hxm" secondAttribute="bottom" constant="73" id="1YW-Y8-dTu"/>
+                            <constraint firstItem="o2Y-OR-XEq" firstAttribute="leading" secondItem="gSc-JV-fZR" secondAttribute="leading" id="Qpn-Xd-rl6"/>
+                            <constraint firstItem="o2Y-OR-XEq" firstAttribute="top" secondItem="gSc-JV-fZR" secondAttribute="bottom" constant="35" id="X5x-R9-ixI"/>
+                            <constraint firstItem="gSc-JV-fZR" firstAttribute="top" secondItem="yqB-B2-93l" secondAttribute="bottom" constant="30" id="cMw-7P-baw"/>
+                            <constraint firstItem="vP3-Xg-G8X" firstAttribute="leading" secondItem="o2Y-OR-XEq" secondAttribute="trailing" constant="17" id="cbJ-Kw-VsC"/>
+                            <constraint firstItem="yqB-B2-93l" firstAttribute="leading" secondItem="RPg-8B-6CJ" secondAttribute="leadingMargin" id="fUj-by-JHx"/>
+                            <constraint firstItem="vP3-Xg-G8X" firstAttribute="centerY" secondItem="o2Y-OR-XEq" secondAttribute="centerY" id="ypz-Uv-cFI"/>
+                            <constraint firstItem="gSc-JV-fZR" firstAttribute="leading" secondItem="yqB-B2-93l" secondAttribute="leading" id="zZZ-4A-Fu0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pizza Type Price" id="Jwd-oE-XLS">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="GdJ-zS-ycC">
+                            <connections>
+                                <action selector="doneEditingPrice:" destination="Pf0-HZ-8wW" id="P6V-se-gGE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="priceLabel" destination="gSc-JV-fZR" id="r9R-BH-ZG9"/>
+                        <outlet property="sizeToppinLabel" destination="yqB-B2-93l" id="2OQ-nA-14M"/>
+                        <outlet property="unitPriceText" destination="vP3-Xg-G8X" id="Tw4-9x-IOs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fY7-Ao-kRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BT7-N2-a0Q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sJX-PY-Z7o" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eVY-s4-YX1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ykx-pl-p1M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cA9-RA-yaD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-79.200000000000003" y="138.98050974512745"/>
         </scene>
