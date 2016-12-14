@@ -6,6 +6,10 @@
 //  Copyright © 2016 Frank Cipolla. All rights reserved.
 //
 
+protocol PriceDelegate {
+    func priceDidFinish(controller:PriceVC,pizza:Pizza)
+}
+
 import UIKit
 
 class PriceVC: UIViewController {
@@ -26,7 +30,7 @@ class PriceVC: UIViewController {
         unitPriceText.becomeFirstResponder()
     }
 
-    // Mark : Outlets
+    // Mark : Outlets and variables
     
     @IBOutlet weak var sizeToppinLabel: UILabel!
     
@@ -34,10 +38,15 @@ class PriceVC: UIViewController {
     
     @IBOutlet weak var unitPriceText: UITextField!
     
+    
+    var delegate:PriceDelegate? = nil
+    
+    
     // Mark : Actions
     
     @IBAction func doneEditingPrice(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
+        // navigationController?.popViewController(animated: true) // used this prior to setting up delegate
+        delegate?.priceDidFinish(controller: self, pizza: pizza)
     }
     
     @IBAction func unitPriceText(_ sender: UITextField) {
