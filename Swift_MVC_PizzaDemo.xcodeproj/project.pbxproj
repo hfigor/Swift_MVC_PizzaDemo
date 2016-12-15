@@ -16,6 +16,8 @@
 		3CA023391DFEE3AA00BA47EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CA023371DFEE3AA00BA47EA /* LaunchScreen.storyboard */; };
 		3CA023441DFEE3AA00BA47EA /* Swift_MVC_PizzaDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA023431DFEE3AA00BA47EA /* Swift_MVC_PizzaDemoTests.swift */; };
 		3CA0234F1DFEE3AB00BA47EA /* Swift_MVC_PizzaDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0234E1DFEE3AB00BA47EA /* Swift_MVC_PizzaDemoUITests.swift */; };
+		3CF347B61E0362800028D855 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3CF347B51E0362800028D855 /* README.txt */; };
+		3CF347B81E03636F0028D855 /* Swift_MVC_PizzaDemoBlockDiagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF347B71E03636F0028D855 /* Swift_MVC_PizzaDemoBlockDiagram.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		3CA0234A1DFEE3AB00BA47EA /* Swift_MVC_PizzaDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift_MVC_PizzaDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA0234E1DFEE3AB00BA47EA /* Swift_MVC_PizzaDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_MVC_PizzaDemoUITests.swift; sourceTree = "<group>"; };
 		3CA023501DFEE3AB00BA47EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CF347B51E0362800028D855 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		3CF347B71E03636F0028D855 /* Swift_MVC_PizzaDemoBlockDiagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Swift_MVC_PizzaDemoBlockDiagram.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 		3CA0232D1DFEE3AA00BA47EA /* Swift_MVC_PizzaDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3CF347B51E0362800028D855 /* README.txt */,
 				3CA023321DFEE3AA00BA47EA /* Main.storyboard */,
 				3CA0235D1DFF0CC300BA47EA /* Model */,
 				3CA0235E1DFF0CE200BA47EA /* ViewControllers */,
@@ -130,6 +135,7 @@
 		3CA0235C1DFF0C9000BA47EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3CF347B71E03636F0028D855 /* Swift_MVC_PizzaDemoBlockDiagram.png */,
 				3CA0233A1DFEE3AA00BA47EA /* Info.plist */,
 				3CA023371DFEE3AA00BA47EA /* LaunchScreen.storyboard */,
 				3CA0232E1DFEE3AA00BA47EA /* AppDelegate.swift */,
@@ -265,6 +271,8 @@
 			files = (
 				3CA023391DFEE3AA00BA47EA /* LaunchScreen.storyboard in Resources */,
 				3CA023361DFEE3AA00BA47EA /* Assets.xcassets in Resources */,
+				3CF347B81E03636F0028D855 /* Swift_MVC_PizzaDemoBlockDiagram.png in Resources */,
+				3CF347B61E0362800028D855 /* README.txt in Resources */,
 				3CA023341DFEE3AA00BA47EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
