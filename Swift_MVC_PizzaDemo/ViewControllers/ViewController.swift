@@ -8,13 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController, PriceDelegate{
+class ViewController: UIViewController, PriceDelegate, PizzaDelegate{
     
-    var pizza = Pizza() // 1 instantiate Pizza object
+    // Mark: Properties
+    
+    var pizza: Pizza = Pizza() { // 1 instantiate Pizza object
+        didSet {
+            // any change to the class but not properties
+            displayPizza()
+        }
+    }
     let clearString = "I like Pizza!" // 2 instance string constant
-
+    
+    // Mark: The View
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pizza.delegate = self // connect the pizza delegate
         resultsDisplayLabel.text = clearString
         view.backgroundColor = UIColor( //UIColor( red: 0.99, green: 0.9, blue: 0.9, alpha: 1.0 )
             red: 0.99,
@@ -22,14 +32,17 @@ class ViewController: UIViewController, PriceDelegate{
             blue: 0.9,
             alpha: 1.0
         )
-   
+        
     }
     
-// Mark : Outlets
+    // Mark: Outlets
     
     @IBOutlet weak var resultsDisplayLabel: UILabel!
     
-// Mark : Actions
+    @IBOutlet weak var pizzaType: UISegmentedControl!
+    
+    
+    // Mark: Actions
     
     @IBAction func pizzaType(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
@@ -45,19 +58,24 @@ class ViewController: UIViewController, PriceDelegate{
     
     
     @IBAction func clearDisplayButton(_ sender: UIButton) {  // Red Button
+        pizza.delegate = nil // shut down delegate
         resultsDisplayLabel.text = clearString
-        
+        // add default pizza settings in section 5 ( I think this should be handled with a pizza.init Frank
+        pizza.pizzaDiameter = 0.0
+        pizza.pizzaType = "Cheese"
+        pizzaType.selectedSegmentIndex = 0 // reset to first segment
+        pizza.delegate = self // turn delegate back on
     }
     
-// Mark : Delegates and Protocols
+    // Mark: Delegates and Protocols
     
     func priceDidFinish(controller: PriceVC, pizza: Pizza) {
         self.pizza = pizza // 2 we assign the data from the returning controller to our local var.
         controller.navigationController?.popViewController(animated: true) // 3 dismiss the PriceVC
-        displayPizza()
+        // displayPizza()  in section 5 we are now opserving the Pizza() so this is not needed
     }
     
-// Mark: Instance Methods
+    // Mark: Instance Methods
     
     func displayPizza() {
         let displayString  = String(
@@ -69,13 +87,13 @@ class ViewController: UIViewController, PriceDelegate{
         resultsDisplayLabel.text = displayString
     }
     
-    // Mark : Navigation
+    // Mark: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "type price" {
             let vc = segue.destination as! PriceVC
             vc.pizza = self.pizza
-            vc.delegate = self 
+            vc.delegate = self
         }
         
     }
@@ -85,7 +103,7 @@ class ViewController: UIViewController, PriceDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

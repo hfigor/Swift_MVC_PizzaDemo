@@ -8,18 +8,46 @@
 
 import UIKit
 
+// Mark : Protocols
+
+protocol PizzaDelegate {
+    // protocol for the display update
+    func displayPizza()
+}
+
 class Pizza {
     
+        // Mark: Properties
+    
+    var delegate: PizzaDelegate? = nil
+    
+    // in section 5 we make some of the instance properties observable
     let Pi = 3.1415926
-    var pizzaDiameter = 0.0
+    var pizzaDiameter: Double = 0.0 {
+        // make change notification
+        didSet{
+            delegate?.displayPizza()
+        }
+    }
     let maxPizza = 24.0
-    var pizzaType = "Cheese"
-    var pizzaPricePerInSq = [
+    var pizzaType: String = "Cheese" {
+        // make change notification
+        didSet{
+            delegate?.displayPizza()
+        }
+    }
+    var pizzaPricePerInSq : [String:Double] = [
         "Cheese": 0.03,
         "Sausage": 0.06,
         "Pepperoni": 0.05,
         "Veggie": 0.04
-    ]
+        ]{
+        // make change notification
+        didSet{
+            delegate?.displayPizza()
+            
+        }
+    }
     
 // Mark : Computed Properties
 
@@ -28,8 +56,10 @@ class Pizza {
         get {
             return pizzaDiameter / 2.0
         }
+        // in computed properties you don't need to add observer just add delegate call to set func
         set (newRadius) { // 5 -- optionally define a setter
             pizzaDiameter = newRadius * 2.0
+            delegate?.displayPizza()  // instead of did set
         }
 }
 
