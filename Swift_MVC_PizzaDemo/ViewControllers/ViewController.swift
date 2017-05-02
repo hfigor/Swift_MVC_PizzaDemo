@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, PriceDelegate, PizzaDelegate{
     
-    // Mark: Properties
+    // MARK: Properties
     
     var pizza: Pizza = Pizza() { // 1 instantiate Pizza object
         didSet {
@@ -20,7 +20,7 @@ class ViewController: UIViewController, PriceDelegate, PizzaDelegate{
     }
     let clearString = "I like Pizza!" // 2 instance string constant
     
-    // Mark: The View
+    // MARK: The View
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,25 +35,25 @@ class ViewController: UIViewController, PriceDelegate, PizzaDelegate{
         
     }
     
-    // Mark: Outlets
+    // MARK: Outlets
     
     @IBOutlet weak var resultsDisplayLabel: UILabel!
     
     @IBOutlet weak var pizzaType: UISegmentedControl!
     
     
-    // Mark: Actions
+    // MARK: Actions
     
     @IBAction func pizzaType(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
         pizza.pizzaType = sender.titleForSegment(at: index)!
-        displayPizza()
+        // displayPizza() we now have a delegate
     }
     
     
     @IBAction func sizeButton(_ sender: UIButton) {  // Blue Button
         pizza.pizzaDiameter = pizza.diameterFromString(aString: sender.titleLabel!.text!) // watch for optionals
-        displayPizza()
+        //displayPizza() we now have a delegate
     }
     
     
@@ -67,7 +67,7 @@ class ViewController: UIViewController, PriceDelegate, PizzaDelegate{
         pizza.delegate = self // turn delegate back on
     }
     
-    // Mark: Delegates and Protocols
+    // MARK:  Delegates and Protocols
     
     func priceDidFinish(controller: PriceVC, pizza: Pizza) {
         self.pizza = pizza // 2 we assign the data from the returning controller to our local var.
@@ -75,7 +75,7 @@ class ViewController: UIViewController, PriceDelegate, PizzaDelegate{
         // displayPizza()  in section 5 we are now opserving the Pizza() so this is not needed
     }
     
-    // Mark: Instance Methods
+    // MARK: Instance Methods
     
     func displayPizza() {
         let displayString  = String(
@@ -87,7 +87,7 @@ class ViewController: UIViewController, PriceDelegate, PizzaDelegate{
         resultsDisplayLabel.text = displayString
     }
     
-    // Mark: Navigation
+    // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "type price" {

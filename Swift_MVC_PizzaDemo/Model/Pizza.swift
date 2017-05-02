@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Mark : Protocols
+// MARK: Protocols
 
 protocol PizzaDelegate {
     // protocol for the display update
@@ -17,7 +17,7 @@ protocol PizzaDelegate {
 
 class Pizza {
     
-        // Mark: Properties
+        // MARK: Properties
     
     var delegate: PizzaDelegate? = nil
     
@@ -49,7 +49,7 @@ class Pizza {
         }
     }
     
-// Mark : Computed Properties
+// MARK: Computed Properties
 
     var radius: Double { // 1 -- computed property
     // must define getter for computed property
@@ -69,11 +69,11 @@ class Pizza {
         }
     }
     
-// Mark : Methods
+// MARK: Methods
     
-    func pizzaArea() -> Double {
-        return radius * radius * Pi
-    }
+    //    func pizzaArea() -> Double {
+    //       return radius * radius * Pi
+    //   }
     
     func unitPrice() -> Double {
         let unitPrice = pizzaPricePerInSq[pizzaType] //2
@@ -86,7 +86,7 @@ class Pizza {
     }
     
     func pizzaPrice() -> Double {
-        return pizzaArea() * unitPrice()
+        return area * unitPrice()
     }
     
     func diameterFromString(aString:String) -> Double {
