@@ -248,6 +248,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="pizzaType" destination="Rxd-VD-8Gi" id="y36-Sb-nY9"/>
                         <outlet property="resultsDisplayLabel" destination="RZB-fs-j2b" id="Eam-dZ-dCT"/>
                     </connections>
                 </viewController>

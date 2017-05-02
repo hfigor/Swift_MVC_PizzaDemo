@@ -12,7 +12,7 @@ protocol PriceDelegate {
 
 import UIKit
 
-class PriceVC: UIViewController {
+class PriceVC: UIViewController, PizzaDelegate{
 
     var pizza = Pizza()
     
@@ -24,7 +24,7 @@ class PriceVC: UIViewController {
                 format: "%0.2f" , currentUnitPrice
             )
         }
-        displayText()
+        displayPizza()
         
         unitPriceText.keyboardType = UIKeyboardType.decimalPad
         unitPriceText.becomeFirstResponder()
@@ -52,12 +52,13 @@ class PriceVC: UIViewController {
     @IBAction func unitPriceText(_ sender: UITextField) {
         let unitPrice = Double(sender.text!)
         pizza.pizzaPricePerInSq[pizza.pizzaType] = unitPrice  // 4
-        displayText()
+        displayPizza()
     }
     
     // Mark : Instance Methods
     
-    func displayText() {
+    func displayPizza() {
+        // in section 5 we rename displayText to displayPizza
         sizeToppinLabel.text = String(
             format: "%6.2f inch %@",
             pizza.pizzaDiameter,
